@@ -20,9 +20,11 @@ public class PrimeNUmber {
         int c = 2;
 
         while(c*c<=n){
+
             if(n%c == 0) {
                 return false;
             }
+
             c++;
         }
 
