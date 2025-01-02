@@ -122,20 +122,38 @@ public class RecursionPattern {
 //    }
 //}
 
-    static void selectionR(int[] arr,int r,int c,int max){
-        if(r == 0){
-            return;
-        }
+//    static void selectionR(int[] arr,int r,int c,int max){
+//        if(r == 0){
+//            return;
+//        }
+//
+//        if(r > c){
+//            if(arr[c] > arr[max]){
+//            selectionR(arr,r,c+1,c);
+//            }else{
+//                selectionR(arr,r,c+1,max);
+//            }
+//         //this is take out the maximum number from the iteration
+//        }else{
+//            int temp = arr[max] ;
+//            arr[max] = arr[r-1];
+//            arr[r-1] = temp;
+//
+//            selectionR(arr,r-1,0,0);
+//        }
+//    }
 
-        if(r > c){
-            if(arr[c] > arr[max]){
-            selectionR(arr,r,c+1,c);
+    static void selectionR(int[] arr,int r,int c,int max){
+        if(r==0) return;
+
+        if(r>c){
+            if(arr[c]>arr[max]){
+                selectionR(arr,r,c+1,c);
             }else{
                 selectionR(arr,r,c+1,max);
             }
-         //this is take out the maximum number from the iteration
         }else{
-            int temp = arr[max] ;
+            int temp = arr[max];
             arr[max] = arr[r-1];
             arr[r-1] = temp;
 
