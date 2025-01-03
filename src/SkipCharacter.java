@@ -1,7 +1,7 @@
 public class SkipCharacter {
     public static void main(String[] args) {
-        String name = "abcd";
-        String result = SkipCharcater(name);
+        String name = "abcdapplecfrf";
+        String result = skippableAppnotApple(name);
         System.out.print(result);
     }
 
@@ -36,6 +36,32 @@ public class SkipCharacter {
         }
         else{
             return ch + SkipCharcater(p.substring(1));
+        }
+    }
+
+    static String skippable(String up){
+        if(up.isEmpty()) return " ";
+
+        char ch = up.charAt(0);
+
+        if(up.startsWith("apple")){
+            return skippable(up.substring(5));
+        }
+        else{
+            return ch + skippable(up.substring(1));
+        }
+    }
+
+    static String skippableAppnotApple(String up){
+        if(up.isEmpty()) return " ";
+
+        char ch = up.charAt(0);
+
+        if(up.startsWith("app") && !up.startsWith("apple")){
+            return skippableAppnotApple(up.substring(5));
+        }
+        else{
+            return ch + skippableAppnotApple(up.substring(1));
         }
     }
 }
