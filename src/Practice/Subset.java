@@ -1,5 +1,6 @@
 package Practice;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,10 +8,13 @@ import java.util.List;
 public class Subset {
     public static void main(String[] args) {
 //        Subset("","abc");
-        int[] ans = {1,2,2};
+//        int[] ans = {1,2,2};
 //        Arraysubset(ans);
-        List<List<Integer>> list =   ArraysubsetDuplicate(ans);
-    System.out.print(list);
+//        List<List<Integer>> list =   ArraysubsetDuplicate(ans);
+//    System.out.print(list);
+//        permutation()
+        ArrayList<String> permutation = permutation("","abc");
+        System.out.print(permutation);
     }
 
     static void Subset(String p,String up){
@@ -70,6 +74,24 @@ public class Subset {
         }
 
         return outer;
+    }
+
+    static ArrayList permutation(String p,String up){
+        ArrayList<String> list = new ArrayList<>();
+        if(up.isEmpty()){
+            list.add(p);
+            return list;
+        }
+
+        char ch = up.charAt(0);
+
+        for (int i = 0; i <= p.length(); i++) {
+            String f = p.substring(0,i);
+            String s = p.substring(i,p.length());
+            ArrayList<String> belowcall = permutation(f+ch+s,up.substring(1));
+            list.addAll(belowcall);
+        }
+            return list;
     }
 
 
