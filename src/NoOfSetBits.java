@@ -1,6 +1,6 @@
 public class NoOfSetBits {
     public static void main(String[] args) {
-        int n= 234;
+        int n= 10;
         System.out.println(Integer.toBinaryString(n));
         int count = 0;
 

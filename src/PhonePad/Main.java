@@ -8,6 +8,8 @@ public class Main {
 //        System.out.print(list);
         int count = padcount("","12");
         System.out.print(count);
+
+//        pad2("","23");
     }
 
     static ArrayList pad(String p, String up){
