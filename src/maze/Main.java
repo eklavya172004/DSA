@@ -13,7 +13,7 @@ public class Main {
                 {true,true,true}
         };
 
-        pathObstacle("",board,0,0);
+        pathSA("",3,7);
     }
 
     static int path(int r, int c){
@@ -46,7 +46,7 @@ public class Main {
     static ArrayList<String> pathSA(String p, int r, int c){
         if(r==1 && c==1){
         ArrayList<String> list = new ArrayList<>();
-//            System.out.println(p);
+            System.out.println(p);
             list.add(p);
             return list;
         }

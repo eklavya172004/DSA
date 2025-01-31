@@ -12,6 +12,40 @@ public class LL {
             this.size = 0;
         }
 
+//--------------------------------RECURSION INSERTION----------------------------------------------------
+    public void insertRec(int val,int index){
+        head = InsertRecursion(val,index,head);
+    }
+
+    public Node InsertRecursion(int val,int index,Node node){
+        if (index == 0){
+            Node temp = new Node(val,node);
+            size++;
+            return temp;
+        }
+
+        node.next = InsertRecursion(val,index-1,node.next);
+        return node;
+    }
+
+//-----------------------------------------REMOVE DUPLICATES------------------------------------------------------------
+        public void removeDuplicates(){
+            Node temp = head;
+
+            while (temp.next!=null){
+                if(temp.value == temp.next.value){
+                    temp.next = temp.next.next;
+                    size--;
+                }else{
+                temp = temp.next;
+                }
+            }
+
+            tail = temp;
+            tail.next = null;
+        }
+
+
         public void insertAtLast(int val){
             if(tail == null){
                 insertAtFirst(val);
