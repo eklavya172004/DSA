@@ -23,27 +23,39 @@ class Solution {
         }
 
         SortList middle = middleNode(head);
-        SortList rightHalf = middle.next; // Store right half
-        middle.next = null;
+//        SortList rightHalf = middle.next; // Store right half
+//        middle.next = null;
 
         SortList left = sortList(head);
-        SortList right = sortList(rightHalf);
+        SortList right = sortList(middle);
 
         return mergeTwoLists(left,right);
     }
 
-    public SortList middleNode(SortList head) {
-        SortList slow = head;
-        SortList fast = head;
+//    public SortList middleNode(SortList head) {
+//        SortList slow = head;
+//        SortList fast = head;
+//        SortList prev = null;
+//
+//        while(fast!=null && fast.next != null){
+//            prev = slow;
+//            slow = slow.next;
+//            fast = fast.next.next;
+//        }
+//
+//        return prev;
+//    }
+    public SortList middleNode(SortList head){
         SortList prev = null;
 
-        while(fast!=null && fast.next != null){
-            prev = slow.next;
-            slow = slow.next;
-            fast = fast.next.next;
+        while(head!=null && head.next !=null){
+            prev = (prev==null)? head : prev.next;
+            head = head.next.next;
         }
 
-        return prev;
+        SortList mid = prev.next;
+        prev.next = null;
+        return mid;
     }
 
     public SortList mergeTwoLists(SortList list1, SortList list2) {
@@ -57,12 +69,12 @@ class Solution {
             if(f.val>s.val){
                 temp.next = s;
                 s = s.next;
-                temp = temp.next;
             }else{
                 temp.next = f;
                 f = f.next;
-                temp = temp.next;
+//                temp = temp.next;
             }
+                temp = temp.next;
         }
 
         while(s!=null){

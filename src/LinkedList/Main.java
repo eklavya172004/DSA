@@ -17,9 +17,10 @@ public class Main {
 //        list.deleteAtLast();
 //        list.deleteAtIndex(1);
 //        list.deleteAtLast();
-        list.insertRec(55,5);
+//        list.insertRec(55,5);
         list.display();
-
+        list.reverseLL();
+        list.display();
 //        DL list2 = new DL();
 //        list2.insertAtFirst(23);
 //        list2.insertAtFirst(24);

@@ -176,6 +176,23 @@ public class LL {
             System.out.println("End");
         }
 
+        //reverse linked-list
+    public void reverseLL(){
+            reverse(head);
+    }
+
+    private void reverse(Node node){
+        if(node == tail){
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        node.next = null;
+    }
+
     private class Node{
 
 
