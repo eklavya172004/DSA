@@ -1,3 +1,4 @@
+
 public class SumOfDigits {
     public static void main(String[] args) {
             System.out.print(product(0));
