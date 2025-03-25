@@ -33,15 +33,15 @@ public class LevelOrder {
             for(int i = 0 ; i < size ; i++){
                 TreeNode node = queue.poll();
 
-                level.add(node.val);
+                    level.add(node.val);
 
-                if(node.left!=null){
-                    queue.add(node.left);
-                }
+                    if(node.left!=null){
+                        queue.add(node.left);
+                    }
 
-                if(node.right!=null){
-                    queue.add(node.right);
-                }
+                    if(node.right!=null){
+                        queue.add(node.right);
+                    }
             }
 
             result.addFirst(level);
