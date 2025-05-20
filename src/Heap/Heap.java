@@ -12,7 +12,11 @@ public class Heap<T extends Comparable<T>> {
     list = new ArrayList<>();
     }
 
-      public class TreeNode {
+    public int size() {
+        return list.size();
+    }
+
+    public class TreeNode {
       int val;
       TreeNode left;
       TreeNode right;
